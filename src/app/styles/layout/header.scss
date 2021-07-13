@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import '../../styles/abstracts/variables.scss';
+
+    .header-title-lg{
+        font-family: $header-title-font;
+        font-size: $header-font-size;
+        color: $text-title-color;
+        margin-left: 5vw;
+        p{
+            padding:$padding-1 0;
+            cursor: pointer;
+        }
+    }
+    .header-options{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        column-gap: 2.5vw;
+        margin-right: 5vw;
+        p{
+            padding: 1.2rem $padding-1;
+            font-size: $normal-font-size;
+            font-family: $body-font;
+            cursor: pointer;
+            transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        p:hover{
+            transform: translate(0,-4px);
+            color: #0000ffbf;
+            
+        }
+    }
+
+@media screen and (max-width:480px){
+    .header-options{
+        display: none;
+        p{
+            display: none;
+        }
+    }
+    .header-title-lg{
+        display: none;
+    }
+    .header-title{
+        font-family: $header-title-font;
+        font-size: $header-font-size;
+        color: $text-title-color;
+        p{
+            padding:$padding-1;
+            cursor: pointer;
+        }
+    }
+}
+@media screen and (min-width:480px) {
+    .header-title{
+        display: none;
+    }
+}

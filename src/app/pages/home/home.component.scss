@@ -1,0 +1,289 @@
+@import '../../styles/abstracts/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap');
+body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: $body-font;
+    color: #555;
+    font-size: 1.2rem;
+    height: 100%;
+    position: relative;
+    padding: 0 5vw 8vw 5vw;//0 2vw 8vw 2vw;
+    column-gap: 18vw;//19vw;//15vw;
+    margin-top: -3vw;
+    .image-animation{
+        position: relative;
+        width: 30vw;
+        display: flex;
+        justify-content: center;
+    }
+    .image-container{
+        /* glassMorphism */
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 16vw;//20vw;
+        height: 23vw;//26vw;//30vw;
+        background: rgba(255,255,255,.05);
+        padding: 1rem .5rem;
+        align-items: center;//flex-start;
+        box-shadow: 0px 15px 35px rgba(0,0,0,0.2);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        .profile-image{
+            /* glassMorphism */
+            //padding-top: 2vw;
+            > img{
+                width: 12vw;//170px;//200px;
+                border-radius: 50%;
+                border: 5px solid rgba(0,0,0,0.25);
+            }
+        }
+        .social-links{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            img{
+                width: 1.8vw;
+            }
+        }
+        
+    }
+    .image-animation::before{
+        // content: "";
+        // position: absolute;
+        // display: flex;
+        // margin-top: -10vw;
+        // /* bottom: 2vw; */
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+        // background: linear-gradient(#7272eb, blue);
+        // clip-path: circle(20% at right);
+        content: "";
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        width: 6vw;
+        height: 6vw;
+        margin-left: 20vw;
+        margin-top: -2vw;
+        background: linear-gradient(#9d9df2, #0000ffbf);
+        box-shadow: -5px 30px 30px -6px rgb(6 7 8 / 45%);//Newly added
+    }
+    .image-animation::after{
+        content: "";
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        width: 6vw;
+        height: 6vw;
+        margin-left: 4vw;
+        margin-top: 21.75vw;
+        background: linear-gradient(#9d9df2, #0000ffbf);
+        box-shadow: -4px 20px 20px -6px rgb(6 7 8 / 45%);//Newly added
+        z-index: -1;
+    }
+    .info-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .about-me{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1.75rem;
+        text-align: left;
+        width: 40vw;
+
+        .introduction{
+            .i-am-mahesh{
+                color: $mahesh-intro-color;
+                font-size: $big-font-size;
+                font-weight: $font-semi-bold;
+                position: relative;
+                width: auto;
+            }
+            /* TypeWriterEffect */
+            .i-am-mahesh::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 120%;
+                bottom: 0;
+            }
+            .i-am-mahesh::before{
+                background: linear-gradient(90deg, transparent 0%,white 20%, white 100%);
+                animation: typeWriter 8s ease-out  forwards;
+            }
+            @keyframes typeWriter {
+                0% {
+                    left: -20%;
+                }
+                50%{
+                    left: 120%;
+                }
+                100%{
+                    left: 120%;
+                }
+            }
+            .designation{
+                color:$designation-color;
+                font-size: $font-size-2;
+                font-weight: $font-semi-bold;
+            }
+            p{
+                padding: 0.5rem 0.5rem .5rem 0;
+            }
+
+        }
+        .tech-images{
+            display: flex;
+            justify-content: space-around;
+            gap: 1.5rem;
+             img{
+                width: 30px//2vw;
+            }
+        }
+        .scroll-down{
+            display: flex;
+            flex-direction: row;
+            font-size: $normal-font-size;
+            align-items: center;
+            gap: 10px;
+            //margin-left: 14vw;
+            position: absolute;
+            bottom: 1vw;//-6vw;
+             img{
+                width: 25px;
+             }
+        }
+        .download-resume-btn{
+            padding: 1rem 2rem;
+            background :linear-gradient(
+                -45deg
+                , #7474ea, #3030d4f5, #0e0ed0);
+            color: white;
+            border-radius: 10px;
+            border: 5px solid #bebef8;
+            box-shadow: -5px 30px 20px -20px rgb(86 93 113 / 38%);
+            font-size: 1rem;
+            transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+        .download-resume-btn:hover{
+            box-shadow: -5px 30px 20px -16px rgb(46 89 204 / 45%);
+            transform: translate(0,-4px);
+            background: linear-gradient( 
+                -45deg
+                 , #7d7dee, #663cf8, #562af0);
+            border: 5px solid #d8d0f5f2;
+        }
+    }
+  
+}
+@media screen and (max-width:580px) { //max-width:480px
+    body{
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: $body-font;
+        color: #555;
+        font-size: $small-font-size;
+        height: 100%;
+        padding: $padding-1-2;
+
+        .about-me{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1.5rem;
+            text-align: center;
+            width: 50vw;
+
+            .scroll-down{
+                display: none;
+            }
+
+            .introduction{
+                .i-am-mahesh{
+                    color: $mahesh-intro-color;
+                    font-size: $font-size-1-5;
+                    font-weight: $font-semi-bold;
+                    width: auto;
+                }
+                .designation{
+                    color: rgba(10,5,53,.34);
+                    font-size:$font-size-1-35;
+                    font-weight: $font-semi-bold;
+                }
+                p{
+                    padding: 0.5rem 0.5rem .5rem 0;
+                }
+    
+            }
+            .tech-images{
+                display: flex;
+                justify-content: space-around;
+                gap: 1.5rem;
+    
+                 img{
+                    width: 25px//2vw;
+                }
+            }
+        }
+        .image-container{
+            display: contents;
+            .profile-image{
+                
+                > img{
+                    width: 140px;
+                    border-radius: 50%;
+                    border:none;
+                }
+            }
+            .social-links{
+                display: none;
+            }
+        }
+        .image-container::before{
+            display: none;
+        }
+        .image-animation::before{
+            display: none;
+        }
+        .image-animation{
+            display: contents;
+        }
+        .image-animation::after{
+            display: none;
+        }
+
+        .download-resume-btn{
+            padding: .6rem 1.2rem;
+            background :linear-gradient(
+                -45deg
+                , #7474ea, #3030d4f5, #0e0ed0);
+            color: white;
+            border-radius: 10px;
+            border: 5px solid #bebef8;
+            box-shadow: -5px 30px 20px -20px rgb(86 93 113 / 38%);
+            font-size: .9rem;
+            transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+    }
+}

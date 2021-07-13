@@ -1,0 +1,27 @@
+<body>
+  <div class="header-title-lg">
+    <p [routerLink]="['/app-home']">Mahesh Rokade</p>
+  </div>
+  <div class="header-title">
+    <p>Mahesh</p>
+  </div>
+  <div class="header-options" *ngIf="shouldMenuIconVisible; else elseBlock">
+    <p [routerLink]="['/app-skills']">Skills</p>
+    <p>Projects</p>
+    <p>Journey</p>
+  </div>
+  <ng-template #elseBlock>
+    <div
+     *ngIf="isSideNavOpened; else elseBlock"
+     class="menu-icon"
+      (click)="menuIconClicked()"
+    >
+    <img src="../../../assets/bars.svg">
+    </div>
+    <ng-template #elseBlock>
+      <div class="menu-icon" (click)="menuIconClicked()">
+        <img src="../../../assets/times.svg"> 
+      </div>
+    </ng-template>
+  </ng-template>
+</body>

@@ -1,0 +1,8 @@
+@import './app/styles/abstracts/variables.scss';
+@import './app/styles/components/section.scss';
+/* You can add global styles to this file, and also import other style files */
+html,body,p{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,18 @@
+@import '../../styles/layout/header.scss';
+@import '../../styles/components/menu-bar.scss';
+@import '../../styles/abstracts/variables.scss';
+body{
+    background-color: $header-background-color;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu-icon{
+        width: 30px;
+        height: auto;
+        padding: .8em;
+        transition: all 0.45s;
+    }
+}

@@ -1,0 +1,103 @@
+@import '../../styles/abstracts/variables.scss';
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: $body-font;
+    row-gap: 20px;
+    .main-title{
+        color: $mahesh-intro-color;
+        font-size: $big-font-size;
+        font-weight: $font-semi-bold;
+        padding: 0 0 .5rem 0;
+    }
+    .sub-title{
+        color: #7b88a8;
+        padding: 0 0 .5rem 0;
+    }
+    .skills-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        //width: 30vw;
+        gap: 40px;
+
+        .skills-options{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 20px;
+            width: 23vw;//20vw;
+            //height: 19vw;//26vw;//30vw;
+            background: rgba(255,255,255,.05);
+            padding: 1rem .5rem;
+            align-items: center;//flex-start;
+            box-shadow: 0px 15px 35px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            // background-color: rgb(235, 221, 248);
+            // display: flex;
+            // flex-direction: column;
+            // //justify-content: center;
+            // gap: 1rem;
+            .skill-title{
+                padding: .5rem;
+                font-size: 1.25rem;
+                display: flex;
+                gap: 20px;
+                img{
+                    width: 2vw;
+                }
+            }
+            .language-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 100%;
+                text-align: left;
+            }
+            .language{
+                
+                .progress-container{
+                    background-color: #eee;
+                    margin: 0 2.5rem;
+                    border-radius: .4em;
+                    margin-bottom: 1rem;
+                    .progress-bar{
+                        height: .4vw;
+                        width: 0;
+                        border-radius: .4em;
+                        background-color: #6563FF;
+                        
+                    }
+                }
+                
+                p{
+                    //padding: .5rem;
+                    padding: .5rem 0.5rem .5rem 2.5rem;
+                }
+
+            }
+        }
+        // display: grid;
+        // grid-gap:20px;
+        // grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+
+    }
+
+}
+body::after{
+    content: "";
+    position: absolute;
+    display: flex;
+    left: 0;
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    margin-left: 72.5vw;
+    margin-top: 26vw;
+    z-index: -1;
+    background: linear-gradient(#9d9df2, #0000ffbf);
+}
