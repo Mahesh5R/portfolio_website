@@ -6,18 +6,17 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isSideNavOpened:boolean=true;
   shouldMenuIconVisible:boolean = true;
-
+  isMenuButtonClicked = false;
   @HostListener('window:resize', ['$event'])
   makeMenuIconInVisible(event?:Event) {
-      if(window.innerWidth < 480 ){
+      if(window.innerWidth < 680 ){ //480
         console.log("receieved value "+ window.innerWidth);
         this.shouldMenuIconVisible=false;
       }
-      else if(window.innerWidth > 480)
+      else if(window.innerWidth > 680) //480
           this.shouldMenuIconVisible=true;
-}
+  }
 
   constructor() { 
     this.makeMenuIconInVisible();
@@ -27,10 +26,10 @@ export class HeaderComponent implements OnInit {
     //this.makeMenuIconInVisible();
   }
   menuIconClicked(){
-    if(this.isSideNavOpened)
-        this.isSideNavOpened=false;
+    if(!this.isMenuButtonClicked) 
+       this.isMenuButtonClicked = true ;
     else
-        this.isSideNavOpened=true;
+       this.isMenuButtonClicked= false;
   }
 
 }

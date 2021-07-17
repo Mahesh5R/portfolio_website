@@ -1,27 +1,39 @@
 <body>
-  <div class="header-title-lg">
-    <p [routerLink]="['/app-home']">Mahesh Rokade</p>
+  <div class="header-container">
+    <div class="header-title-lg" >
+      <p [routerLink]="['/app-home']">Mahesh Rokade</p>
+    </div>
+    <div class="header-title" *ngIf="!shouldMenuIconVisible;">
+      <p [routerLink]="['/app-home']">Mahesh</p>
+    </div>
+    <div class="header-options" *ngIf="shouldMenuIconVisible; else elseBlock">
+      <p [routerLink]="['/app-skills']">Skills</p>
+      <p>Projects</p>
+      <p>Journey</p>
+    </div>
+      <!-- <div
+        *ngIf="isSideNavOpened"
+        class="menu-icon"
+        (click)="menuIconClicked()"
+      >
+        <img src="../../../assets/bars.svg" />
+      </div>
+      <div *ngIf="!isSideNavOpened" (click)="menuIconClicked()" class="menu-icon">
+        <img  src="../../../assets/times.svg" />
+      </div> -->
+      <ng-template #elseBlock>
+        <div class="container" (click)="menuIconClicked()" [class.change]="isMenuButtonClicked">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </ng-template>
   </div>
-  <div class="header-title">
-    <p>Mahesh</p>
-  </div>
-  <div class="header-options" *ngIf="shouldMenuIconVisible; else elseBlock">
-    <p [routerLink]="['/app-skills']">Skills</p>
+</body>
+<div class="menu-card" *ngIf="isMenuButtonClicked && !shouldMenuIconVisible">
+  <div class="menu-options-container">
+    <p>Skills</p>
     <p>Projects</p>
     <p>Journey</p>
   </div>
-  <ng-template #elseBlock>
-    <div
-     *ngIf="isSideNavOpened; else elseBlock"
-     class="menu-icon"
-      (click)="menuIconClicked()"
-    >
-    <img src="../../../assets/bars.svg">
-    </div>
-    <ng-template #elseBlock>
-      <div class="menu-icon" (click)="menuIconClicked()">
-        <img src="../../../assets/times.svg"> 
-      </div>
-    </ng-template>
-  </ng-template>
-</body>
+</div>
