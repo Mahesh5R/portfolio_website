@@ -6,6 +6,7 @@
         font-size: $header-font-size;
         color: $text-title-color;
         margin-left: 5vw;
+        outline: none;
         p{
             padding:$padding-1 0;
             cursor: pointer;
@@ -45,9 +46,11 @@
         font-family: $header-title-font;
         font-size: $header-font-size;
         color: $text-title-color;
+        outline: none;
         p{
             padding:$padding-1;
             cursor: pointer;
+            outline: none;
         }
     }
 }
