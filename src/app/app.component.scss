@@ -5,12 +5,7 @@ body{
                         "home";
     grid-template-rows: 10% 90%;
     align-items: center;
-    // grid-template-areas:
-    //                     "header-area header-area"
-    //                     "home home"
-    //                     "footer footer";
-    // grid-template-rows: 10% 80% 10%;
-    height: 100vh;
+    //height: 100vh;
     
 }
 .header{
@@ -23,4 +18,9 @@ body{
 }
 .footer{
     grid-area: footer;
+}
+@media screen and (min-width:880px){
+    body{
+       height: 100vh;
+    }
 }
