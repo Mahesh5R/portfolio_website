@@ -32,7 +32,7 @@
 </body>
 <div class="menu-card" *ngIf="isMenuButtonClicked && !shouldMenuIconVisible">
   <div class="menu-options-container">
-    <p>Skills</p>
+    <p [routerLink]="['/app-skills']">Skills</p>
     <p>Projects</p>
     <p>Journey</p>
   </div>

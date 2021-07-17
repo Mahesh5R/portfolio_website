@@ -19,7 +19,8 @@ body{
     .skills-container{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;//space-between;
         //width: 30vw;
         gap: 40px;
 
@@ -29,26 +30,22 @@ body{
             flex-direction: column;
             justify-content: flex-start;
             gap: 20px;
-            width: 23vw;//20vw;
+            //width: 23vw;//20vw;
             //height: 19vw;//26vw;//30vw;
             background: rgba(255,255,255,.05);
-            padding: 1rem .5rem;
+            padding: 1.5rem 2.5rem;//1rem .5rem;
             align-items: center;//flex-start;
-            box-shadow: 0px 15px 35px rgba(0,0,0,0.2);
+            box-shadow: -1px 5px 30px rgb(0 0 0 / 20%);//box-shadow: 0px 15px 35px rgba(0,0,0,0.2);
             border-radius: 15px;
             backdrop-filter: blur(10px);
-            // background-color: rgb(235, 221, 248);
-            // display: flex;
-            // flex-direction: column;
-            // //justify-content: center;
-            // gap: 1rem;
+
             .skill-title{
                 padding: .5rem;
                 font-size: 1.25rem;
                 display: flex;
-                gap: 20px;
+                gap: 10px;//20px;
                 img{
-                    width: 2vw;
+                    width: 20px;
                 }
             }
             .language-container{
@@ -62,13 +59,13 @@ body{
                 
                 .progress-container{
                     background-color: #eee;
-                    margin: 0 2.5rem;
-                    border-radius: .4em;
+                    margin: 0 40px;//0 2.5rem;
+                    border-radius: 5px;//.4em;
                     margin-bottom: 1rem;
                     .progress-bar{
-                        height: .4vw;
+                        height: 5px;//.4vw;
                         width: 0;
-                        border-radius: .4em;
+                        border-radius: 5px;//.4em;
                         background-color: #6563FF;
                         
                     }
@@ -88,16 +85,28 @@ body{
     }
 
 }
-body::after{
-    content: "";
-    position: absolute;
-    display: flex;
-    left: 0;
-    border-radius: 50%;
-    width: 5vw;
-    height: 5vw;
-    margin-left: 72.5vw;
-    margin-top: 26vw;
-    z-index: -1;
-    background: linear-gradient(#9d9df2, #0000ffbf);
+@media screen and (max-width:880px) { 
+    body{
+        margin-top: 18vh;
+        margin-bottom: 2rem;
+        .main-title{
+            font-size: 1.9rem;
+        }
+        .sub-title{
+            font-size: .9rem;
+        }
+    }
 }
+// body::after{
+//     content: "";
+//     position: absolute;
+//     display: flex;
+//     left: 0;
+//     border-radius: 50%;
+//     width: 5vw;
+//     height: 5vw;
+//     margin-left: 72.5vw;
+//     margin-top: 26vw;
+//     z-index: -1;
+//     background: linear-gradient(#9d9df2, #0000ffbf);
+// }
